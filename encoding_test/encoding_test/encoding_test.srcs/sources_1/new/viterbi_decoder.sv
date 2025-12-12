@@ -5,11 +5,15 @@
 module viterbi_decoder(
     input logic [15:0]encoded [0:127],
     output logic [7:0]decoded_message [0:127], 
+    input logic BMU_en, ACS_en, SPU_en,
     input clk
     );
     genvar i,j;
-    int index1, index2;
+    genvar index1, index2;
     logic [1:0] symbol;
+    logic [1:0] branch_weights [0:7];
+    logic [3:0] path_weights [0:10];
+    logic [3:0] paths [0:1023];
     
     generate
         for(i = 0; i<128; i++) begin
@@ -17,6 +21,33 @@ module viterbi_decoder(
                   assign index1 = (j*2);
                   assign index2 = (j*2) + 1;
                   assign symbol = {encoded[i][index1],encoded[i][index2]};
+                  if(i == 0 && j == 0) begin
+                    //first step of trellis
+                     branch_metric_unit BMU1(
+                        .symbol(symbol),
+                        .curr_state(10),
+                        .prev_state(00),
+                        .en(BMU_en),
+                        .clk(clk),
+                        .branch_weight(branch_weights[0])
+                     );
+                     
+                     branch_metric_unit BMU2(
+                        .symbol(symbol),
+                        .curr_state(00),
+                        .prev_state(00),
+                        .en(BMU_en),
+                        .clk(clk),
+                        .branch_weight(branch_weights[1])
+                     );
+                     
+                     add_comp_sel ACS1(
+                        
+                     );
+                  end else if(i == 0 && j == 1) begin
+                    //second step of trellis
+                    
+                  end
             end
         end
     endgenerate
