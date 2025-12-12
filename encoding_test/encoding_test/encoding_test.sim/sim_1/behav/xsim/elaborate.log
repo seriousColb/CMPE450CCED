@@ -7,4 +7,11 @@ Starting static elaboration
 Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-3823] variable 'state_reg' might have multiple concurrent drivers [C:/Users/dinak/OneDrive/Documents/UMBC Spring 2025 Semester/CMPE 316/encoding_test/encoding_test.srcs/sim_1/new/input_sim.sv:39]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.encode
+Compiling module xil_defaultlib.shift_register
+Compiling module xil_defaultlib.input_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot input_sim_behav
