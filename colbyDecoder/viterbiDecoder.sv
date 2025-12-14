@@ -17,6 +17,8 @@ logic smu_en = 1'b0;
 logic smu_rst = 1'b1;
 logic [1:0] best_state;
 logic [9:0] decoder_counter = 0;
+logic smu_tb_valid;
+logic smu_tb_bit;
 
 logic [1:0] curr_state [0:3];
 initial begin
@@ -27,6 +29,12 @@ initial begin
 end
 
 always_ff @(posedge clk or posedge rst) begin
+    if(smu_tb_valid) begin
+        smu_en <= 1'b0;
+        decoded_bits[decoder_counter] <= smu0_tb_bit;
+        decoder_counter <= decoder_counter + 1;
+    end
+
     if(rst) begin
         time_step <= 0;
         path_metrics[0] <= 0; //initial state metric
@@ -84,7 +92,7 @@ end
 
 //ACS for state 0 (00 -> 00 and 01 -> 00)
 acs acs0(
-    .rx(encoded_bits[tb_index][tb_index*2 +:2]),
+    .rx(encoded_bits[tb_index][2*time_step +:2]),
     .curr_state(curr_state[0]),
     .path_weight0(path_metrics[0]),
     .path_weight1(path_metrics[1]),
@@ -96,7 +104,7 @@ acs acs0(
 ); 
 //ACS for state 1 (11->01 and 10->01)
 acs acs1(
-    .rx(encoded_bits[tb_index][tb_index*2 +:2]),
+    .rx(encoded_bits[tb_index][2*time_step +:2]),
     .curr_state(curr_state[1]),
     .path_weight0(path_metrics[2]),
     .path_weight1(path_metrics[3]),
@@ -109,7 +117,7 @@ acs acs1(
 
 //ACS for state 2 (00->10 and 01->10)
 acs acs2(
-    .rx(encoded_bits[tb_index][tb_index*2 +:2]),
+    .rx(encoded_bits[tb_index][2*time_step +:2]),
     .curr_state(curr_state[2]),
     .path_weight0(path_metrics[0]),
     .path_weight1(path_metrics[1]),
@@ -122,7 +130,7 @@ acs acs2(
 
 //ACS for state 3 (11->11 and 10->11)
 acs acs3(
-    .rx(encoded_bits[tb_index][tb_index*2 +:2]),
+    .rx(encoded_bits[tb_index][2*time_step +:2]),
     .curr_state(curr_state[3]),
     .path_weight0(path_metrics[2]),
     .path_weight1(path_metrics[3]),
@@ -140,7 +148,7 @@ SMU #(.TB_DEPTH(16)) smu0(
     .sel_in(branch_bits[time_step]),
     .tb_start(smu_en),
     .tb_state_start(best_state),
-    .tb_bit(decoded_bits[tb_index*2 +:2]),
-    .tb_valid(~smu_en)
+    .tb_bit(smu_tb_bit),
+    .tb_valid(smu_tb_valid)
 );
 endmodule
