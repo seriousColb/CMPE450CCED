@@ -1,7 +1,6 @@
 module bmu(
     input logic [1:0]rx,
     input logic [1:0]curr_state,
-    input logic clk,
     output logic [1:0]branch_weight0,
     output logic [1:0]branch_weight1
     );
@@ -20,9 +19,9 @@ module bmu(
 
         case (curr_state)
             2'b00: begin enc0 = 2'b00; enc1 = 2'b11; end
-            2'b01: begin enc0 = 2'b11; enc1 = 2'b00; end
-            2'b10: begin enc0 = 2'b01; enc1 = 2'b10; end
-            2'b11: begin enc0 = 2'b10; enc1 = 2'b01; end
+            2'b10: begin enc0 = 2'b11; enc1 = 2'b00; end
+            2'b01: begin enc0 = 2'b10; enc1 = 2'b01; end
+            2'b11: begin enc0 = 2'b01; enc1 = 2'b10; end
         endcase
     end
 
