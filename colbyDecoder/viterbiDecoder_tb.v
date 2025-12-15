@@ -1,4 +1,24 @@
-`timescale 1ns/1ps
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 12/14/2025 11:46:02 AM
+// Design Name: 
+// Module Name: viterbiDecoder_tb
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
 
 module viterbiDecoder_tb;
 
@@ -6,14 +26,14 @@ module viterbiDecoder_tb;
     // Clock / reset
     // --------------------------------
     logic clk;
-    logic rst;
+    logic rst = 0;
     logic en;
-    logic done;
+    logic done = 0;
 
     // --------------------------------
     // DUT signals
     // --------------------------------
-    logic [31:0] encoded_bits [0:63];
+    logic [31:0]encoded_bits[0:63];
     logic [1023:0] decoded_bits;
 
     // --------------------------------
@@ -39,6 +59,7 @@ module viterbiDecoder_tb;
     // --------------------------------
     initial begin
         integer i;
+        integer k;
 
         // Initialize inputs
         rst = 1'b1;
@@ -46,7 +67,7 @@ module viterbiDecoder_tb;
 
         // Clear encoded input
         for (i = 0; i < 64; i = i + 1) begin
-            encoded_bits[i] = 32'b0;
+           encoded_bits[i] = 32'b0;
         end
 
         // --------------------------------
@@ -54,11 +75,29 @@ module viterbiDecoder_tb;
         // (You can replace this with real encoder output)
         // Each 2 bits = one symbol
         // --------------------------------
-        encoded_bits[0] = {
-            2'b11, 2'b01, 2'b00, 2'b10,
-            2'b11, 2'b01, 2'b00, 2'b10,
-            2'b11, 2'b01, 2'b00, 2'b10,
-            2'b11, 2'b01, 2'b00, 2'b10
+        encoded_bits[1] = {
+            2'b11, 2'b01, 2'b10, 2'b10,
+            2'b10, 2'b10, 2'b10, 2'b10,
+            2'b10, 2'b10, 2'b10, 2'b10,
+            2'b10, 2'b10, 2'b10, 2'b10
+        };
+        encoded_bits[2] = {
+            2'b10, 2'b10, 2'b10, 2'b10,
+            2'b10, 2'b10, 2'b10, 2'b10,
+            2'b10, 2'b10, 2'b10, 2'b10,
+            2'b10, 2'b10, 2'b10, 2'b10
+        };
+        encoded_bits[3] = {
+            2'b10, 2'b10, 2'b10, 2'b10,
+            2'b10, 2'b10, 2'b10, 2'b10,
+            2'b10, 2'b10, 2'b10, 2'b10,
+            2'b10, 2'b10, 2'b10, 2'b10
+        };
+        encoded_bits[4] = {
+            2'b10, 2'b10, 2'b10, 2'b10,
+            2'b10, 2'b10, 2'b10, 2'b10,
+            2'b10, 2'b10, 2'b10, 2'b10,
+            2'b10, 2'b10, 2'b10, 2'b10
         };
 
         // Hold reset
@@ -72,7 +111,7 @@ module viterbiDecoder_tb;
         // --------------------------------
         // Wait for completion
         // --------------------------------
-        wait (done);
+        wait(done);
 
         #20;
         $display("Decoding complete!");
