@@ -1,23 +1,41 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 12/14/2025 11:11:24 AM
+// Design Name: 
+// Module Name: acs
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
 module acs(
     input logic [1:0] rx,
     input logic [1:0] curr_state,
     input logic [10:0] path_weight0,
     input logic [10:0] path_weight1,
-    input logic clk,
     input logic en,
+    input logic clk,
     input logic rst,
     output logic branch_bit, //signifies which branch was added to the path. 1 = upper branch, 0 = lower branch
     output logic [10:0] updated_path
     );
 
-    logic [1:0] bm0, //lower path
-    logic [1:0] bm1, //upper path
+    logic [1:0] bm0, bm1; //lower path //upper path
 
     bmu bmu0(
         .rx(rx),
         .curr_state(curr_state),
-        .en(en),
-        .clk(clk),
         .branch_weight0(bm0),
         .branch_weight1(bm1)
     );
@@ -43,7 +61,7 @@ module acs(
             end else begin
                 updated_path <= path1[10:0];
                 branch_bit <= 1'b1;
-            end
+            end 
         end
         else begin
             updated_path <= updated_path;
