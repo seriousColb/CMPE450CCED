@@ -55,13 +55,16 @@ module acs(
         end
         else if(en)begin
             //update when enabled
-            if(path0 <= path1) begin
+            if(path0 < path1) begin
                 updated_path <= path0[10:0];
                 branch_bit <= 1'b0;
-            end else begin
+            end else if(path1 < path0)  begin
                 updated_path <= path1[10:0];
                 branch_bit <= 1'b1;
-            end 
+            end else begin
+                updated_path <= path1[10:0];
+                branch_bit <= branch_bit;
+             end
         end
         else begin
             updated_path <= updated_path;
