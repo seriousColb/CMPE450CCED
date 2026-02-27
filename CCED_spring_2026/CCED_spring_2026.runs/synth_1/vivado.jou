@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Feb 13 19:49:57 2026
+# Process ID: 28620
+# Current directory: C:/Users/dinak/OneDrive/Documents/UMBC Spring 2025 Semester/CMPE 316/CCED_spring_2026/CCED_spring_2026.runs/synth_1
+# Command line: vivado.exe -log viterbiDecoder_tb.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source viterbiDecoder_tb.tcl
+# Log file: C:/Users/dinak/OneDrive/Documents/UMBC Spring 2025 Semester/CMPE 316/CCED_spring_2026/CCED_spring_2026.runs/synth_1/viterbiDecoder_tb.vds
+# Journal file: C:/Users/dinak/OneDrive/Documents/UMBC Spring 2025 Semester/CMPE 316/CCED_spring_2026/CCED_spring_2026.runs/synth_1\vivado.jou
+# Running On: googoo, OS: Windows, CPU Frequency: 2112 MHz, CPU Physical cores: 12, Host memory: 16870 MB
+#-----------------------------------------------------------
+source viterbiDecoder_tb.tcl -notrace

@@ -1,0 +1,7 @@
+Running: xsim.dir/BMU_tb2_behav/xsimk.exe -simmode gui -wdb BMU_tb2_behav.wdb -simrunnum 0 -socket 49766
+Design successfully loaded
+Design Loading Memory Usage: 10456 KB (Peak: 10456 KB)
+Design Loading CPU Usage: 31 ms
+Simulation completed
+Simulation Memory Usage: 11120 KB (Peak: 11120 KB)
+Simulation CPU Usage: 139 ms

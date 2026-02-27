@@ -1,0 +1,4 @@
+Running: xsim.dir/ACS_tb_single_behav/xsimk.exe -simmode gui -wdb ACS_tb_single_behav.wdb -simrunnum 0 -socket 60830
+Design successfully loaded
+Design Loading Memory Usage: 9524 KB (Peak: 9524 KB)
+Design Loading CPU Usage: 15 ms
