@@ -47,31 +47,31 @@ initial begin
     path_weight0 = 2;
     path_weight1 = 1;
     
-    #10;
+    #10; //10
     
     path_weight0 = updated_path0;
     path_weight1 = 2;
     rx = 2'b01;
     
-    #10;
+    #10; //20
     
     path_weight0 = updated_path0;
     path_weight1 = 1;
     rx = 2'b10;
     
-    #10;
+    #10; //30
     
     path_weight0 = updated_path0;
     path_weight1 = 3;
     rx = 2'b10;
     
-    #10;
+    #10; //40
     
     path_weight0 = updated_path0;
     path_weight1 = 2;
     rx = 2'b11;
     
-    #10;
+    #10; //50
     
     $stop;
 end

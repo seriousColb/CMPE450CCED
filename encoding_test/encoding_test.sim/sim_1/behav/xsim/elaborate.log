@@ -1,17 +1,18 @@
 Vivado Simulator v2023.2
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot input_sim_behav xil_defaultlib.input_sim xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot encoder_FSM_sim_behav xil_defaultlib.encoder_FSM_sim xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3823] variable 'state_reg' might have multiple concurrent drivers [C:/Users/dinak/OneDrive/Documents/UMBC Spring 2025 Semester/CMPE 316/encoding_test/encoding_test.srcs/sim_1/new/input_sim.sv:39]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.encode
-Compiling module xil_defaultlib.shift_register
-Compiling module xil_defaultlib.input_sim
+Compiling module xil_defaultlib.encode_FSM
+Compiling module xil_defaultlib.encode_FSM(K=4)
+Compiling module xil_defaultlib.encode_FSM(K=5)
+Compiling module xil_defaultlib.encode_FSM(K=7)
+Compiling module xil_defaultlib.encoder_FSM_sim
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot input_sim_behav
+Built simulation snapshot encoder_FSM_sim_behav

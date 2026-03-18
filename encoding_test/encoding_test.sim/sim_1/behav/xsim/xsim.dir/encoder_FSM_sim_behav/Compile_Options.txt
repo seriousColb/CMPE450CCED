@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "uvm" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "encoder_FSM_sim_behav" "xil_defaultlib.encoder_FSM_sim" "xil_defaultlib.glbl" -log "elaborate.log" 

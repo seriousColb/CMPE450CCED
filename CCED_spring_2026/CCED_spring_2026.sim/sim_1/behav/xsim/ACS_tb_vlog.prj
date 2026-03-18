@@ -1,8 +1,8 @@
 # compile verilog/system verilog design source files
 sv xil_defaultlib  \
-"../../../../CCED_spring_2026.srcs/sources_1/new/ACS_no_bmu.sv" \
+"../../../../CCED_spring_2026.srcs/sources_1/new/ACS.sv" \
 "../../../../CCED_spring_2026.srcs/sources_1/new/BMU.sv" \
-"../../../../CCED_spring_2026.srcs/sim_1/new/ACS_tb_single.sv" \
+"../../../../CCED_spring_2026.srcs/sim_1/new/ACS_tb.sv" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

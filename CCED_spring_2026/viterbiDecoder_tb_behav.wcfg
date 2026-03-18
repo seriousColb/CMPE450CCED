@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="viterbiDecoder_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="viterbiDecoder_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1,172.666 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,451.467 ns"></ZoomEndTime>
+      <Cursor1Time time="1,395.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="245"></NameColumnWidth>
+      <ValueColumnWidth column_width="222"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/viterbiDecoder_tb/encoded_bits" type="array">
+      <obj_property name="ElementShortName">encoded_bits[0:63][31:0]</obj_property>
+      <obj_property name="ObjectShortName">encoded_bits[0:63][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/viterbiDecoder_tb/decoded_bits" type="array">
+      <obj_property name="ElementShortName">decoded_bits[1023:0]</obj_property>
+      <obj_property name="ObjectShortName">decoded_bits[1023:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group254" type="group">
+      <obj_property name="label">control_signals</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/viterbiDecoder_tb/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/viterbiDecoder_tb/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/viterbiDecoder_tb/done" type="logic">
+         <obj_property name="ElementShortName">done</obj_property>
+         <obj_property name="ObjectShortName">done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/viterbiDecoder_tb/en" type="logic">
+         <obj_property name="ElementShortName">en</obj_property>
+         <obj_property name="ObjectShortName">en</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/viterbiDecoder_tb/dut/tb" type="array">
+      <obj_property name="ElementShortName">tb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">tb[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/viterbiDecoder_tb/dut/path_metrics" type="array">
+      <obj_property name="ElementShortName">path_metrics[0:3][10:0]</obj_property>
+      <obj_property name="ObjectShortName">path_metrics[0:3][10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/viterbiDecoder_tb/dut/updated_path_metrics" type="array">
+      <obj_property name="ElementShortName">updated_path_metrics[0:3][10:0]</obj_property>
+      <obj_property name="ObjectShortName">updated_path_metrics[0:3][10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/viterbiDecoder_tb/dut/branch_bits" type="array">
+      <obj_property name="ElementShortName">branch_bits[0:3]</obj_property>
+      <obj_property name="ObjectShortName">branch_bits[0:3]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/viterbiDecoder_tb/dut/acs_en" type="logic">
+      <obj_property name="ElementShortName">acs_en</obj_property>
+      <obj_property name="ObjectShortName">acs_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/viterbiDecoder_tb/dut/rx0" type="array">
+      <obj_property name="ElementShortName">rx0[1:0]</obj_property>
+      <obj_property name="ObjectShortName">rx0[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/viterbiDecoder_tb/dut/time_step" type="array">
+      <obj_property name="ElementShortName">time_step[3:0]</obj_property>
+      <obj_property name="ObjectShortName">time_step[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/viterbiDecoder_tb/dut/smu_tb_valid" type="logic">
+      <obj_property name="ElementShortName">smu_tb_valid</obj_property>
+      <obj_property name="ObjectShortName">smu_tb_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/viterbiDecoder_tb/dut/smu_tb_bit" type="logic">
+      <obj_property name="ElementShortName">smu_tb_bit</obj_property>
+      <obj_property name="ObjectShortName">smu_tb_bit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/viterbiDecoder_tb/dut/smu_state" type="array">
+      <obj_property name="ElementShortName">smu_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">smu_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/viterbiDecoder_tb/dut/curr_state" type="array">
+      <obj_property name="ElementShortName">curr_state[0:3][1:0]</obj_property>
+      <obj_property name="ObjectShortName">curr_state[0:3][1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/viterbiDecoder_tb/dut/k" type="array">
+      <obj_property name="ElementShortName">k[31:0]</obj_property>
+      <obj_property name="ObjectShortName">k[31:0]</obj_property>
+   </wvobject>
+</wave_config>
