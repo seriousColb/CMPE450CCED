@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/dinak/OneDrive/Documents/UMBC Spring 2025 Semester/CMPE 316/encoding_test/encoding_test.runs/synth_1'
+HD_PWD='C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log shift_register.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source shift_register.tcl
+EAStep vivado -log encode_and_send_FSM.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source encode_and_send_FSM.tcl

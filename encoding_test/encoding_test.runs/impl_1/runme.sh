@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/dinak/OneDrive/Documents/UMBC Spring 2025 Semester/CMPE 316/encoding_test/encoding_test.runs/impl_1'
+HD_PWD='C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -42,7 +42,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
-EAStep vivado -log shift_register.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source shift_register.tcl -notrace
+/bin/touch .write_bitstream.begin.rst
+EAStep vivado -log encode_and_send_FSM.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source encode_and_send_FSM.tcl -notrace
 
 

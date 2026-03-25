@@ -33,13 +33,12 @@ module encode_FSM #(parameter DATA_BITS = 8, K=3)(
             state_reg <= 0;
             counter <= 0;
             encoded_data <= 0;
-            done <= 1;
+            done <= 0;
         end else begin
             case(state)
                 IDLE: begin
                     if(counter < DATA_BITS) begin
-                        //if data is not fully encoded,  set in_bit to current bit (counter tracks)
-                        done <= 0;
+                        //done <= 0;
                         state <= SET;
                     end else begin
                         //set to high when the encoding process is done (when counter exceeds data bits).

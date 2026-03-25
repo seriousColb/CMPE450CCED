@@ -3,12 +3,12 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Thu Nov 13 11:14:32 2025
-# Process ID: 54276
-# Current directory: C:/Users/dinak/OneDrive/Documents/UMBC Spring 2025 Semester/CMPE 316/encoding_test/encoding_test.runs/impl_1
-# Command line: vivado.exe -log shift_register.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source shift_register.tcl -notrace
-# Log file: C:/Users/dinak/OneDrive/Documents/UMBC Spring 2025 Semester/CMPE 316/encoding_test/encoding_test.runs/impl_1/shift_register.vdi
-# Journal file: C:/Users/dinak/OneDrive/Documents/UMBC Spring 2025 Semester/CMPE 316/encoding_test/encoding_test.runs/impl_1\vivado.jou
+# Start of session at: Fri Mar 20 15:40:31 2026
+# Process ID: 25476
+# Current directory: C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.runs/impl_1
+# Command line: vivado.exe -log encode_and_send_FSM.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source encode_and_send_FSM.tcl -notrace
+# Log file: C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.runs/impl_1/encode_and_send_FSM.vdi
+# Journal file: C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.runs/impl_1\vivado.jou
 # Running On: googoo, OS: Windows, CPU Frequency: 2112 MHz, CPU Physical cores: 12, Host memory: 16870 MB
 #-----------------------------------------------------------
-source shift_register.tcl -notrace
+source encode_and_send_FSM.tcl -notrace

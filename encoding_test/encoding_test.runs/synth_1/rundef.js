@@ -24,7 +24,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log shift_register.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source shift_register.tcl" );
+         "-log encode_and_send_FSM.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source encode_and_send_FSM.tcl" );
 
 
 

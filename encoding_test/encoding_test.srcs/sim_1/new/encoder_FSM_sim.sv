@@ -8,6 +8,10 @@ module encoder_FSM_sim(
     logic clk;
     logic encoder_en;
     logic [7:0] raw_data;
+    logic done1;
+    logic done2;
+    logic done3;
+    logic done4;
     
     //different encoded_data signals for each constraint length
     logic [15:0] encoded_data_3;
@@ -20,28 +24,32 @@ module encoder_FSM_sim(
         .raw_data(raw_data),
         .clk(clk),
         .en(encoder_en),
-        .encoded_data(encoded_data_3)
+        .encoded_data(encoded_data_3),
+        .done(done1)
     );
     
     encode_FSM #(.K(4)) DUT_4(
         .raw_data(raw_data),
         .clk(clk),
         .en(encoder_en),
-        .encoded_data(encoded_data_4)
+        .encoded_data(encoded_data_4),
+        .done(done2)
     );
     
     encode_FSM #(.K(5)) DUT_5(
         .raw_data(raw_data),
         .clk(clk),
         .en(encoder_en),
-        .encoded_data(encoded_data_5)
+        .encoded_data(encoded_data_5),
+        .done(done3)
     );
     
     encode_FSM #(.K(7)) DUT_7(
         .raw_data(raw_data),
         .clk(clk),
         .en(encoder_en),
-        .encoded_data(encoded_data_7)
+        .encoded_data(encoded_data_7),
+        .done(done4)
     );
     
     initial begin
