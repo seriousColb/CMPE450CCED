@@ -14,17 +14,17 @@ logic [7:0] rx_data; // internal wire to connect receiver output
 logic in_bit; //extract bit from byte due to ASCII
 logic data_valid; //high when byte is received
 logic [1023:0] msg; //input message
-
-
-logic done; 
+logic [3:0] bit_counter;
+logic [7:0] to_send;
+logic [6:0] byte_index;
 
 transmitter dut1 (
     .clk(clk),
     .reset(reset),
     .transmit(transmit),
-    .data(msg[7:0]),
+    .data(to_send),
     .TxD(TxD),
-    .done(done)
+    .bit_counter(bit_counter)
 );
 
 //transmit V17 (first)
@@ -40,7 +40,6 @@ receiver dut2 (
 );
 
 // assign received data to LEDs
-assign LED = rx_data;
 
 //code to take in from a text file. a 1 or a 0. 
 //python program not yet made to do this
@@ -56,6 +55,27 @@ always_ff @(posedge clk or posedge reset) begin
             msg <= {msg[1022:0], 1'b1};
     end
 end
+
+always_comb begin
+    to_send = msg[(byte_index * 8) +: 8];
+end
+
+always_ff @(posedge clk or posedge reset) begin
+    if(reset) begin
+        byte_index <= 0;
+    end
+    else if(bit_counter >= 10) begin
+            if(byte_index == 127) begin
+                byte_index <= 0;
+            end else begin
+                byte_index <= byte_index + 1;
+            end
+    end 
+    else begin
+        byte_index <= byte_index;
+    end
+end
+
 
 
 endmodule
