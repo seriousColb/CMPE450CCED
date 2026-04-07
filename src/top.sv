@@ -6,21 +6,14 @@ module top(
     input logic RxD,        // UART receive line
     input logic btn,
     output logic TxD,
-
     output logic [7:0] LED  // display received byte on LEDs
 );
 
 logic [7:0] rx_data; // internal wire to connect receiver output
-logic in_bit; //extract bit from byte due to ASCII
 logic data_valid; //high when byte is received
 logic [1023:0] msg; //input message
-logic [3:0] bit_counter;
-logic [7:0] to_send;
 logic [6:0] byte_index;
 
-logic [6:0] byte_idx;
-
-logic done;
 logic start;
 
 logic busy_prev;
@@ -33,8 +26,7 @@ transmitter dut1 (
     .transmit(transmit_pulse),
     .data(msg[byte_index*8 +: 8]),
     .TxD(TxD),
-    .busy(busy),
-    .bit_counter(bit_counter)
+    .busy(busy)
 );
 
 //transmit V17 (first)
@@ -55,11 +47,7 @@ debounce dut3 (
     .pb_out(start)
 );
 
-// assign received data to LEDs
-
 //code to take in from a text file. a 1 or a 0. 
-//python program not yet made to do this
-
 always_ff @(posedge clk or posedge reset) begin
     if(reset) begin
         msg <= 0;
@@ -80,14 +68,10 @@ assign LED[4] = byte_index[4];
 assign LED[5] = byte_index[5];
 assign LED[6] = byte_index[6];
 
-
-logic [7:0] current_byte;
-
-
-
+//start at 127th byte and decrement to send all bytes
 always_ff @(posedge clk or posedge reset) begin
     if (reset) begin
-        byte_index <= 0;
+        byte_index <= 127;
         busy_prev <= 0;
     end
     else begin
@@ -95,20 +79,17 @@ always_ff @(posedge clk or posedge reset) begin
 
         // detect falling edge of busy (byte finished)
         if (busy_prev && !busy) begin
-            if (byte_index == 127)
-                byte_index <= 0;
+            if (byte_index == 0)
+                byte_index <= 127;
             else
-                byte_index <= byte_index + 1;
+                byte_index <= byte_index - 1;
         end
     end
 end
-
 
 always_ff @(posedge clk) begin
     start_prev <= start;
     transmit_pulse <= start && !start_prev; // rising edge detect
 end
-
-
 
 endmodule
