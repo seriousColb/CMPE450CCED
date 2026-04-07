@@ -11,8 +11,7 @@ module transmitter(
     input  logic        transmit, // strobe signal to load new byte (hold high for 1 cycle)
     input  logic [7:0]  data,     // data to transmit
     output logic        TxD,      // serial output, held high when idle
-    output logic        busy,      // high when staging buffer is full - do not write
-    output logic [3:0] bit_counter
+    output logic        busy      // high when staging buffer is full - do not write
 );
 
 //-------------------------------------------------------------------------
@@ -119,7 +118,5 @@ always @(*) begin
         default: nextstate = 0;
     endcase
 end
-
-assign bit_counter = bitcounter;
 
 endmodule
