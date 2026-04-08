@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log encode_and_send_FSM.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source encode_and_send_FSM.tcl
+EAStep vivado -log encode_and_tx_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source encode_and_tx_top.tcl

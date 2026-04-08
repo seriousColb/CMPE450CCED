@@ -6,6 +6,7 @@
 module encode_and_send_FSM #(parameter DATA_BITS=8, K=3)(
     input logic clk,
     input logic en,
+    input logic [DATA_BITS-1:0]raw_data,
     output logic done,
     output logic txd,
     output logic led_test
@@ -14,7 +15,6 @@ module encode_and_send_FSM #(parameter DATA_BITS=8, K=3)(
     //encoder signals
     logic encoder_en;
     logic [(DATA_BITS*2)-1:0]encoded_data;
-    logic [DATA_BITS-1:0]raw_data;
     logic encode_done;
     
     //transmitter signals
@@ -55,7 +55,6 @@ module encode_and_send_FSM #(parameter DATA_BITS=8, K=3)(
             state <= IDLE;
             encoder_en <= 0;
             encoded_data <= 0;
-            raw_data <= 8'b01011001;
             encode_done <= 0;
             
             tx_reset <= 0;
@@ -78,12 +77,13 @@ module encode_and_send_FSM #(parameter DATA_BITS=8, K=3)(
                 end
                 
                 ENCODE: begin
+                    //entire message is encoded in this state, storing the result in encoded_data
                     if(encode_done == 0) begin
                         state <= ENCODE;
+                        led_test <= encode_done;
                     end else begin
                         //encoding is done so disable the the encoder and move to transmission states
-                        led_test <= 1;
-                        encoder_en <= 0;
+                        //encoder_en <= 0;
                         state <= SET_BYTE;
                     end
                 end
