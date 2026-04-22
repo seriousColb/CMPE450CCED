@@ -9,7 +9,10 @@ module encode_and_send_FSM #(parameter DATA_BITS=8, K=3)(
     input logic [DATA_BITS-1:0]raw_data,
     output logic done,
     output logic txd,
-    output logic led_test
+    output logic led_test1,
+    output logic led_test2,
+    output logic led_test3,
+    output logic led_test4
     );
     
     //encoder signals
@@ -22,12 +25,15 @@ module encode_and_send_FSM #(parameter DATA_BITS=8, K=3)(
     logic tx_transmit;
     logic [7:0]tx_data;
     logic tx_done;
+    logic tx_busy_prev; //used to detect falling edge of busy
+    logic tx_busy;
+    logic [16:0] wait_counter;
     
     //state machine control signals
     logic [2:0]state;
-    logic [7:0]byte_counter; //byte_counter tracks bytes to be sent by transmitter. it is a decremental counter.
+    logic [8:0]byte_counter; //byte_counter tracks bytes to be sent by transmitter. it is a decremental counter.
     
-    encode_FSM #(.DATA_BITS(DATA_BITS), .K(K)) encoder(
+    encode_FSM #(.DATA_BITS(DATA_BITS),.K(K)) encoder(
         .raw_data(raw_data),
         .clk(clk),
         .en(encoder_en),
@@ -35,42 +41,66 @@ module encode_and_send_FSM #(parameter DATA_BITS=8, K=3)(
         .done(encode_done)
     );
     
-    transmitter transmitter(
+//    transmitter transmitter(
+//        .clk(clk),
+//        .reset(tx_reset),
+//        .transmit(tx_transmit),
+//        .data(tx_data),
+//        .TxD(txd),
+//        .done(tx_done)
+//    );
+
+    buffered_transmitter transmitter(
         .clk(clk),
         .reset(tx_reset),
         .transmit(tx_transmit),
-        .data(tx_data),
+        .data(encoded_data[byte_counter*8 +: 8]),
         .TxD(txd),
-        .done(tx_done)
+        .busy(tx_busy)
+        //.done(tx_done)
     );
     
     //state machine will start with an encode state that encodes the entire message.
     localparam IDLE = 3'b000;
     localparam ENCODE = 3'b001;
-    localparam SET_BYTE = 3'b010;
-    localparam TRANSMIT_BYTE = 3'b011;
+    localparam WAIT_TRANSMIT = 3'b010;
+    localparam WAIT_BUSY_HIGH = 3'b011;
+    localparam WAIT_READY = 3'b100;
+    localparam TRANSMIT_BYTE = 3'b101;
+    
+    //edge detection
+    always_ff @(posedge clk) begin
+        tx_busy_prev <= tx_busy;  
+    end
+    
+    //assign tx_reset = !en;
     
     always_ff @(posedge clk) begin
         if(!en) begin
             state <= IDLE;
             encoder_en <= 0;
-            encoded_data <= 0;
-            encode_done <= 0;
+            //encoded_data <= 0; this signal is driven by encoder
+            //encode_done <= 0; this signal is driven by encoder
             
-            tx_reset <= 0;
             tx_transmit <= 0;
             tx_data <= 0;
-            tx_done <= 0;
+            //tx_done <= 0; this signal is driven by transmitter
             
             done <= 0;
-            byte_counter <= (DATA_BITS*2) % 8;
-            led_test <= 0;
+            led_test1 <= 1;
+            led_test2 <= 0;
+            led_test3 <= 0;
+            led_test4 <= 0;
+            tx_reset <= 1;
+            wait_counter <= 0;
         end else begin
             case(state)
                 IDLE: begin
+                    tx_reset <= 0;
                     if(done == 0)begin
                         state <= ENCODE;
                         encoder_en <= 1;
+                        led_test2 <= 1;
                     end else begin
                         state <=IDLE;
                     end
@@ -80,48 +110,78 @@ module encode_and_send_FSM #(parameter DATA_BITS=8, K=3)(
                     //entire message is encoded in this state, storing the result in encoded_data
                     if(encode_done == 0) begin
                         state <= ENCODE;
-                        led_test <= encode_done;
+                        led_test3 <= 1;
                     end else begin
                         //encoding is done so disable the the encoder and move to transmission states
                         //encoder_en <= 0;
-                        state <= SET_BYTE;
+                        byte_counter <= ((DATA_BITS*2/8) - 1); //double the amount of bytes in the encoded message
+                        state <= WAIT_READY;
                     end
                 end
                 
-                SET_BYTE: begin
-                    if(byte_counter > 0) begin
-                        //there are more bytes to send. set tx_data and move to transmit. 
-                        //wouldn't let me set tx_data to a range so i just assigned each bit one by one
-                        tx_data[0] <= encoded_data[byte_counter*8-1];
-                        tx_data[1] <= encoded_data[byte_counter*8-2];
-                        tx_data[2] <= encoded_data[byte_counter*8-3];
-                        tx_data[3] <= encoded_data[byte_counter*8-4];
-                        tx_data[4] <= encoded_data[byte_counter*8-5];
-                        tx_data[5] <= encoded_data[byte_counter*8-6];
-                        tx_data[6] <= encoded_data[byte_counter*8-7];
-                        tx_data[7] <= encoded_data[byte_counter*8-8];
+//                SET_BYTE: begin
+//                        ////there are more bytes to send. set tx_data and move to transmit. 
+//                        //wouldn't let me set tx_data to a range so i just assigned each bit one by one
+//                        tx_data[0] <= encoded_data[byte_counter*8 +: 8];
                         
-                        tx_reset <=0;
+//                        state <= TOGGLE_TRANSMIT;
+//                end 
+                
+                //add a toggle transmit state that sets transmit to high for 1 cycle (needs to be pulsed)
+//                TOGGLE_TRANSMIT: begin
+//                    tx_transmit <= 1;
+//                    state <= WAIT_BUSY_HIGH;
+//                end
+                
+                WAIT_READY: begin
+                    //if tx is not busy, transmit
+                    wait_counter <= 0;
+                    tx_reset <= 0;
+                    if(!tx_busy) begin
+                        tx_transmit <= 1;
+                        state <= WAIT_BUSY_HIGH;
+                    end else begin
+                        state <= WAIT_READY;
+                    end
+                end
+                
+                WAIT_BUSY_HIGH: begin
+                    tx_transmit <= 0;
+
+                    //rising edge of busy
+                    if(tx_busy && !tx_busy_prev) begin
                         state <= TRANSMIT_BYTE;
                     end else begin
-                        //all bytes have been sent
-                        done <= 1;
-                        state <= IDLE;
+                        state <= WAIT_BUSY_HIGH;
                     end
-                end 
+                end
                 
                 TRANSMIT_BYTE: begin
-                    //set transmit bit to high and move back to set_byte state after transmission is done
-                    tx_transmit <= 1;
-                    if(tx_done == 0) begin
-                        //not done transmitting
-                        state <= TRANSMIT_BYTE;
+                    //wait in this state for transmission to complete. this happens on the falling edge of the busy bit
+                    led_test4 <= 1;
+                  
+                    //falling edge of busy
+                    if(tx_busy_prev && !tx_busy) begin
+                        state <= WAIT_TRANSMIT;
                     end else begin
-                        //done transmitting. reset the transmitter
-                        tx_transmit <= 0;
+                        state <= TRANSMIT_BYTE;
+                    end
+                end
+                
+                WAIT_TRANSMIT: begin
+                    //just added a state that will wait for the byte to transmit before moving to the next state
+                    wait_counter <= wait_counter + 1;
+                    if(wait_counter >= 105000) begin
                         tx_reset <= 1;
-                        byte_counter = byte_counter - 1;
-                        state <= SET_BYTE;
+                        byte_counter <= byte_counter - 1;
+                        if(byte_counter == 0) begin
+                            state <= IDLE;
+                            done <= 1;
+                        end else begin
+                            state <= WAIT_READY;
+                        end
+                    end else begin
+                        state <= WAIT_TRANSMIT;
                     end
                 end       
             endcase

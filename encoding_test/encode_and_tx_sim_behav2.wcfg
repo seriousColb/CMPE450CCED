@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="encode_and_tx_sim_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="encode_and_tx_sim" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="295,087.978334 us"></ZoomStartTime>
+      <ZoomEndTime time="297,395.978335 us"></ZoomEndTime>
+      <Cursor1Time time="295,472.645000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="188"></NameColumnWidth>
+      <ValueColumnWidth column_width="123"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="36" />
+   <wvobject fp_name="/encode_and_tx_sim/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/en" type="logic">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/raw_data" type="array">
+      <obj_property name="ElementShortName">raw_data[1023:0]</obj_property>
+      <obj_property name="ObjectShortName">raw_data[1023:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/txd" type="logic">
+      <obj_property name="ElementShortName">txd</obj_property>
+      <obj_property name="ObjectShortName">txd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/led_test1" type="logic">
+      <obj_property name="ElementShortName">led_test1</obj_property>
+      <obj_property name="ObjectShortName">led_test1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/led_test2" type="logic">
+      <obj_property name="ElementShortName">led_test2</obj_property>
+      <obj_property name="ObjectShortName">led_test2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/led_test3" type="logic">
+      <obj_property name="ElementShortName">led_test3</obj_property>
+      <obj_property name="ObjectShortName">led_test3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/led_test4" type="logic">
+      <obj_property name="ElementShortName">led_test4</obj_property>
+      <obj_property name="ObjectShortName">led_test4</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/transmitter/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/transmitter/transmit" type="logic">
+      <obj_property name="ElementShortName">transmit</obj_property>
+      <obj_property name="ObjectShortName">transmit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/transmitter/data" type="array">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/transmitter/busy" type="logic">
+      <obj_property name="ElementShortName">busy</obj_property>
+      <obj_property name="ObjectShortName">busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/transmitter/TxD" type="logic">
+      <obj_property name="ElementShortName">TxD</obj_property>
+      <obj_property name="ObjectShortName">TxD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/transmitter/bitcounter" type="array">
+      <obj_property name="ElementShortName">bitcounter[3:0]</obj_property>
+      <obj_property name="ObjectShortName">bitcounter[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/transmitter/counter" type="array">
+      <obj_property name="ElementShortName">counter[13:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[13:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/byte_counter" type="array">
+      <obj_property name="ElementShortName">byte_counter[7:0]</obj_property>
+      <obj_property name="ObjectShortName">byte_counter[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/transmitter/state" type="logic">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/transmitter/nextstate" type="logic">
+      <obj_property name="ElementShortName">nextstate</obj_property>
+      <obj_property name="ObjectShortName">nextstate</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/transmitter/rightshiftreg" type="array">
+      <obj_property name="ElementShortName">rightshiftreg[9:0]</obj_property>
+      <obj_property name="ObjectShortName">rightshiftreg[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/transmitter/shift" type="logic">
+      <obj_property name="ElementShortName">shift</obj_property>
+      <obj_property name="ObjectShortName">shift</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/transmitter/load" type="logic">
+      <obj_property name="ElementShortName">load</obj_property>
+      <obj_property name="ObjectShortName">load</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/transmitter/clear" type="logic">
+      <obj_property name="ElementShortName">clear</obj_property>
+      <obj_property name="ObjectShortName">clear</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/transmitter/staging_reg" type="array">
+      <obj_property name="ElementShortName">staging_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">staging_reg[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/transmitter/staging_valid" type="logic">
+      <obj_property name="ElementShortName">staging_valid</obj_property>
+      <obj_property name="ObjectShortName">staging_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/encoder_en" type="logic">
+      <obj_property name="ElementShortName">encoder_en</obj_property>
+      <obj_property name="ObjectShortName">encoder_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/encoded_data" type="array">
+      <obj_property name="ElementShortName">encoded_data[2047:0]</obj_property>
+      <obj_property name="ObjectShortName">encoded_data[2047:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/encode_done" type="logic">
+      <obj_property name="ElementShortName">encode_done</obj_property>
+      <obj_property name="ObjectShortName">encode_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/tx_reset" type="logic">
+      <obj_property name="ElementShortName">tx_reset</obj_property>
+      <obj_property name="ObjectShortName">tx_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/tx_transmit" type="logic">
+      <obj_property name="ElementShortName">tx_transmit</obj_property>
+      <obj_property name="ObjectShortName">tx_transmit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/tx_data" type="array">
+      <obj_property name="ElementShortName">tx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/tx_done" type="logic">
+      <obj_property name="ElementShortName">tx_done</obj_property>
+      <obj_property name="ObjectShortName">tx_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/tx_busy_prev" type="logic">
+      <obj_property name="ElementShortName">tx_busy_prev</obj_property>
+      <obj_property name="ObjectShortName">tx_busy_prev</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/tx_busy" type="logic">
+      <obj_property name="ElementShortName">tx_busy</obj_property>
+      <obj_property name="ObjectShortName">tx_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/wait_counter" type="array">
+      <obj_property name="ElementShortName">wait_counter[16:0]</obj_property>
+      <obj_property name="ObjectShortName">wait_counter[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encode_and_tx_sim/DUT/state" type="array">
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
+   </wvobject>
+</wave_config>

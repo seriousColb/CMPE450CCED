@@ -1,7 +1,7 @@
-Running: xsim.dir/encoder_FSM_sim_behav/xsimk.exe -simmode gui -wdb encoder_FSM_sim_behav.wdb -simrunnum 0 -socket 61808
+Running: xsim.dir/encoder_FSM_sim_behav/xsimk.exe -simmode gui -wdb encoder_FSM_sim_behav.wdb -simrunnum 0 -socket 55915
 Design successfully loaded
-Design Loading Memory Usage: 9496 KB (Peak: 9496 KB)
-Design Loading CPU Usage: 15 ms
+Design Loading Memory Usage: 10060 KB (Peak: 10060 KB)
+Design Loading CPU Usage: 30 ms
 Simulation completed
-Simulation Memory Usage: 10092 KB (Peak: 10092 KB)
-Simulation CPU Usage: 15 ms
+Simulation Memory Usage: 18880 KB (Peak: 18880 KB)
+Simulation CPU Usage: 2530 ms

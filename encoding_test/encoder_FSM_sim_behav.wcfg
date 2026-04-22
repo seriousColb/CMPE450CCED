@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="encoder_FSM_sim_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="encoder_FSM_sim" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="24,330,309.166 ns"></ZoomStartTime>
+      <ZoomEndTime time="24,330,883.167 ns"></ZoomEndTime>
+      <Cursor1Time time="24,330,565.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="188"></NameColumnWidth>
+      <ValueColumnWidth column_width="129"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="29" />
+   <wvobject fp_name="/encoder_FSM_sim/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/encoder_en" type="logic">
+      <obj_property name="ElementShortName">encoder_en</obj_property>
+      <obj_property name="ObjectShortName">encoder_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/raw_data" type="array">
+      <obj_property name="ElementShortName">raw_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">raw_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/raw_data2" type="array">
+      <obj_property name="ElementShortName">raw_data2[1023:0]</obj_property>
+      <obj_property name="ObjectShortName">raw_data2[1023:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/done1" type="logic">
+      <obj_property name="ElementShortName">done1</obj_property>
+      <obj_property name="ObjectShortName">done1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/done2" type="logic">
+      <obj_property name="ElementShortName">done2</obj_property>
+      <obj_property name="ObjectShortName">done2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/done3" type="logic">
+      <obj_property name="ElementShortName">done3</obj_property>
+      <obj_property name="ObjectShortName">done3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/done4" type="logic">
+      <obj_property name="ElementShortName">done4</obj_property>
+      <obj_property name="ObjectShortName">done4</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/done5" type="logic">
+      <obj_property name="ElementShortName">done5</obj_property>
+      <obj_property name="ObjectShortName">done5</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/encoded_data_3" type="array">
+      <obj_property name="ElementShortName">encoded_data_3[15:0]</obj_property>
+      <obj_property name="ObjectShortName">encoded_data_3[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/encoded_data_4" type="array">
+      <obj_property name="ElementShortName">encoded_data_4[15:0]</obj_property>
+      <obj_property name="ObjectShortName">encoded_data_4[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/encoded_data_5" type="array">
+      <obj_property name="ElementShortName">encoded_data_5[15:0]</obj_property>
+      <obj_property name="ObjectShortName">encoded_data_5[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/encoded_data_7" type="array">
+      <obj_property name="ElementShortName">encoded_data_7[15:0]</obj_property>
+      <obj_property name="ObjectShortName">encoded_data_7[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/encoded_data_8" type="array">
+      <obj_property name="ElementShortName">encoded_data_8[2047:0]</obj_property>
+      <obj_property name="ObjectShortName">encoded_data_8[2047:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/DUT_8/raw_data" type="array">
+      <obj_property name="ElementShortName">raw_data[1023:0]</obj_property>
+      <obj_property name="ObjectShortName">raw_data[1023:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/DUT_8/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/DUT_8/en" type="logic">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/DUT_8/encoded_data" type="array">
+      <obj_property name="ElementShortName">encoded_data[2047:0]</obj_property>
+      <obj_property name="ObjectShortName">encoded_data[2047:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/DUT_8/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/DUT_8/state_reg" type="array">
+      <obj_property name="ElementShortName">state_reg[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state_reg[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/DUT_8/out1" type="logic">
+      <obj_property name="ElementShortName">out1</obj_property>
+      <obj_property name="ObjectShortName">out1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/DUT_8/out2" type="logic">
+      <obj_property name="ElementShortName">out2</obj_property>
+      <obj_property name="ObjectShortName">out2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/DUT_8/state" type="array">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/DUT_8/counter" type="array">
+      <obj_property name="ElementShortName">counter[9:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/DUT_8/DATA_BITS" type="array">
+      <obj_property name="ElementShortName">DATA_BITS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_BITS[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/DUT_8/K" type="array">
+      <obj_property name="ElementShortName">K[31:0]</obj_property>
+      <obj_property name="ObjectShortName">K[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/DUT_8/IDLE" type="array">
+      <obj_property name="ElementShortName">IDLE[1:0]</obj_property>
+      <obj_property name="ObjectShortName">IDLE[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/DUT_8/SET" type="array">
+      <obj_property name="ElementShortName">SET[1:0]</obj_property>
+      <obj_property name="ObjectShortName">SET[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_FSM_sim/DUT_8/SHIFT" type="array">
+      <obj_property name="ElementShortName">SHIFT[1:0]</obj_property>
+      <obj_property name="ObjectShortName">SHIFT[1:0]</obj_property>
+   </wvobject>
+</wave_config>

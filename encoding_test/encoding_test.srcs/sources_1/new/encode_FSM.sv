@@ -25,7 +25,7 @@ module encode_FSM #(parameter DATA_BITS = 8, K=3)(
    
     //FSM control signals
     logic[1:0] state;
-    logic[9:0] counter; //maximum is 1024 for 1024 length input message. tracks what bit we are at in decoding process
+    logic[10:0] counter; //maximum is 1024 for 1024 length input message. tracks what bit we are at in decoding process
     
     always_ff @(posedge clk) begin
         if(!en) begin
@@ -43,6 +43,7 @@ module encode_FSM #(parameter DATA_BITS = 8, K=3)(
                     end else begin
                         //set to high when the encoding process is done (when counter exceeds data bits).
                         done <= 1;
+                        state <= IDLE;
                     end
                 end
                 

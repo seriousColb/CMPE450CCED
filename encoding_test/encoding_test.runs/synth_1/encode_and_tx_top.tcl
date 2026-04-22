@@ -87,9 +87,9 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
+  C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/buffered_transmitter.sv
   C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/encode_FSM.sv
   C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/encode_and_send_FSM.sv
-  C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/uart_tx.sv
   C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/encode_and_tx_top.sv
 }
 OPTRACE "Adding files" END { }
