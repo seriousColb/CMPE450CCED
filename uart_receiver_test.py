@@ -11,7 +11,7 @@ def receive_data():
     try:
         #Open the serial port
         ser = serial.Serial(port_name, baud_rate, timeout=1)
-        print(f"Connected to {port_name} at {baud_rate} baud rate.")
+        print(f"Connected to {port_name} at {baud_rate} baud rate. Waiting to receive data...")
         
         #Continuously read data from the serial port
         while True:

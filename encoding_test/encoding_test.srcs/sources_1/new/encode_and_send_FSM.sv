@@ -8,11 +8,7 @@ module encode_and_send_FSM #(parameter DATA_BITS=8, K=3)(
     input logic en,
     input logic [DATA_BITS-1:0]raw_data,
     output logic done,
-    output logic txd,
-    output logic led_test1,
-    output logic led_test2,
-    output logic led_test3,
-    output logic led_test4
+    output logic txd
     );
     
     //encoder signals
@@ -87,10 +83,6 @@ module encode_and_send_FSM #(parameter DATA_BITS=8, K=3)(
             //tx_done <= 0; this signal is driven by transmitter
             
             done <= 0;
-            led_test1 <= 1;
-            led_test2 <= 0;
-            led_test3 <= 0;
-            led_test4 <= 0;
             tx_reset <= 1;
             wait_counter <= 0;
         end else begin
@@ -100,7 +92,6 @@ module encode_and_send_FSM #(parameter DATA_BITS=8, K=3)(
                     if(done == 0)begin
                         state <= ENCODE;
                         encoder_en <= 1;
-                        led_test2 <= 1;
                     end else begin
                         state <=IDLE;
                     end
@@ -110,7 +101,6 @@ module encode_and_send_FSM #(parameter DATA_BITS=8, K=3)(
                     //entire message is encoded in this state, storing the result in encoded_data
                     if(encode_done == 0) begin
                         state <= ENCODE;
-                        led_test3 <= 1;
                     end else begin
                         //encoding is done so disable the the encoder and move to transmission states
                         //encoder_en <= 0;
@@ -158,7 +148,6 @@ module encode_and_send_FSM #(parameter DATA_BITS=8, K=3)(
                 
                 TRANSMIT_BYTE: begin
                     //wait in this state for transmission to complete. this happens on the falling edge of the busy bit
-                    led_test4 <= 1;
                   
                     //falling edge of busy
                     if(tx_busy_prev && !tx_busy) begin

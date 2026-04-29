@@ -1,87 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1776870966">
-  <File Type="ROUTE-PWR" Name="encode_and_tx_top_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="encode_and_tx_top.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="encode_and_tx_top_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="encode_and_tx_top_reports.tcl"/>
-  <File Type="OPT-RQA-PB" Name="encode_and_tx_top_rqa_opted.pb"/>
-  <File Type="BITSTR-MMI" Name="encode_and_tx_top.mmi"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="encode_and_tx_top_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="encode_and_tx_top_timing_summary_init.rpt"/>
-  <File Type="OPT-TIMING" Name="encode_and_tx_top_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="encode_and_tx_top_opt.dcp"/>
-  <File Type="OPT-DRC" Name="encode_and_tx_top_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="encode_and_tx_top.hwdef"/>
-  <File Type="PWROPT-DCP" Name="encode_and_tx_top_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="encode_and_tx_top_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="encode_and_tx_top_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="encode_and_tx_top_placed.dcp"/>
-  <File Type="PLACE-IO" Name="encode_and_tx_top_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="encode_and_tx_top_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="encode_and_tx_top_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="encode_and_tx_top_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="encode_and_tx_top_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="encode_and_tx_top_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="encode_and_tx_top_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BIN" Name="encode_and_tx_top.bin"/>
-  <File Type="PLACE-TIMING" Name="encode_and_tx_top_timing_summary_placed.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="encode_and_tx_top_power_routed.rpx"/>
-  <File Type="PLACE-RQA-PB" Name="encode_and_tx_top_rqa_placed.pb"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="encode_and_tx_top_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-MSK" Name="encode_and_tx_top.msk"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="encode_and_tx_top_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="encode_and_tx_top_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="encode_and_tx_top_drc_physopted.rpt"/>
-  <File Type="BITSTR-RBT" Name="encode_and_tx_top.rbt"/>
-  <File Type="PHYSOPT-TIMING" Name="encode_and_tx_top_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="encode_and_tx_top_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="encode_and_tx_top_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="encode_and_tx_top_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="encode_and_tx_top_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="encode_and_tx_top_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="encode_and_tx_top_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="encode_and_tx_top_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="encode_and_tx_top_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="encode_and_tx_top_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-RQS-PB" Name="encode_and_tx_top_rqs_routed.pb"/>
-  <File Type="ROUTE-STATUS" Name="encode_and_tx_top_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="encode_and_tx_top_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="encode_and_tx_top_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="encode_and_tx_top_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="encode_and_tx_top_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="encode_and_tx_top_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="encode_and_tx_top_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="encode_and_tx_top_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="encode_and_tx_top_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="encode_and_tx_top_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="encode_and_tx_top_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="encode_and_tx_top_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="encode_and_tx_top_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="encode_and_tx_top_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="encode_and_tx_top_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="encode_and_tx_top_bus_skew_postroute_physopted.rpt"/>
-  <File Type="BG-BIT" Name="encode_and_tx_top.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="encode_and_tx_top_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="encode_and_tx_top_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="encode_and_tx_top.nky"/>
-  <File Type="BITSTR-BMM" Name="encode_and_tx_top_bd.bmm"/>
-  <File Type="PDI-FILE" Name="encode_and_tx_top.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="encode_and_tx_top_boot.pdi"/>
-  <File Type="PL-PDI-FILE" Name="encode_and_tx_top_pld.pdi"/>
-  <File Type="RCFI_FILE" Name="encode_and_tx_top.rcfi"/>
-  <File Type="CFI_FILE" Name="encode_and_tx_top.cfi"/>
-  <File Type="RNPI_FILE" Name="encode_and_tx_top.rnpi"/>
-  <File Type="NPI_FILE" Name="encode_and_tx_top.npi"/>
-  <File Type="RBD_FILE" Name="encode_and_tx_top.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1777474542">
+  <File Type="ROUTE-PWR" Name="receive_encode_send_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="receive_encode_send.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="receive_encode_send_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="receive_encode_send_reports.tcl"/>
+  <File Type="OPT-RQA-PB" Name="receive_encode_send_rqa_opted.pb"/>
+  <File Type="BITSTR-MMI" Name="receive_encode_send.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="receive_encode_send_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="receive_encode_send_timing_summary_init.rpt"/>
+  <File Type="OPT-TIMING" Name="receive_encode_send_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="receive_encode_send_opt.dcp"/>
+  <File Type="OPT-DRC" Name="receive_encode_send_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="receive_encode_send.hwdef"/>
+  <File Type="PWROPT-DCP" Name="receive_encode_send_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="receive_encode_send_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="receive_encode_send_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="receive_encode_send_placed.dcp"/>
+  <File Type="PLACE-IO" Name="receive_encode_send_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="receive_encode_send_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="receive_encode_send_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="receive_encode_send_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="receive_encode_send_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="receive_encode_send_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="receive_encode_send_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="receive_encode_send.bin"/>
+  <File Type="PLACE-TIMING" Name="receive_encode_send_timing_summary_placed.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="receive_encode_send_power_routed.rpx"/>
+  <File Type="PLACE-RQA-PB" Name="receive_encode_send_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="receive_encode_send_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="receive_encode_send.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="receive_encode_send_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="receive_encode_send_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="receive_encode_send_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="receive_encode_send.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="receive_encode_send_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="receive_encode_send_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="receive_encode_send_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="receive_encode_send_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="receive_encode_send_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="receive_encode_send_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="receive_encode_send_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="receive_encode_send_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="receive_encode_send_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="receive_encode_send_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-RQS-PB" Name="receive_encode_send_rqs_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="receive_encode_send_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="receive_encode_send_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="receive_encode_send_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="receive_encode_send_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="receive_encode_send_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="receive_encode_send_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="receive_encode_send_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="receive_encode_send_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="receive_encode_send_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="receive_encode_send_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="receive_encode_send_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="receive_encode_send_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="receive_encode_send_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="receive_encode_send_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="receive_encode_send_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="receive_encode_send_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="receive_encode_send.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="receive_encode_send_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="receive_encode_send_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="receive_encode_send.nky"/>
+  <File Type="BITSTR-BMM" Name="receive_encode_send_bd.bmm"/>
+  <File Type="PDI-FILE" Name="receive_encode_send.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="receive_encode_send_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="receive_encode_send_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="receive_encode_send.rcfi"/>
+  <File Type="CFI_FILE" Name="receive_encode_send.cfi"/>
+  <File Type="RNPI_FILE" Name="receive_encode_send.rnpi"/>
+  <File Type="NPI_FILE" Name="receive_encode_send.npi"/>
+  <File Type="RBD_FILE" Name="receive_encode_send.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="encode_and_tx_top.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="encode_and_tx_top.sysdef"/>
-  <File Type="BG-BGN" Name="encode_and_tx_top.bgn"/>
-  <File Type="BG-DRC" Name="encode_and_tx_top.drc"/>
-  <File Type="RDI-RDI" Name="encode_and_tx_top.vdi"/>
+  <File Type="BITSTR-LTX" Name="receive_encode_send.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="receive_encode_send.sysdef"/>
+  <File Type="BG-BGN" Name="receive_encode_send.bgn"/>
+  <File Type="BG-DRC" Name="receive_encode_send.drc"/>
+  <File Type="RDI-RDI" Name="receive_encode_send.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="ROUTE-RQS" Name="encode_and_tx_top_routed.rqs"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="encode_and_tx_top_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="receive_encode_send_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="receive_encode_send_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
@@ -107,8 +107,38 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/receive_msg_FSM.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/uart_receiver.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/receive_encode_send.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/msg_receive_sim.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/encode_and_tx_top.sv">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -156,7 +186,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="encode_and_tx_top"/>
+      <Option Name="TopModule" Val="receive_encode_send"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
