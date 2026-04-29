@@ -1,0 +1,8 @@
+*.wdb
+*.jou
+*.log
+*.pb
+*.str
+*.wcfg
+*.sim/
+*.runs/
