@@ -19,9 +19,9 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module acs(
+module acs#(parameter K = 3)(
     input logic [1:0] rx,
-    input logic [1:0] curr_state,
+    input logic [K-2:0] curr_state,
     input logic [10:0] path_weight0,
     input logic [10:0] path_weight1,
     input logic en,
@@ -33,7 +33,7 @@ module acs(
 
     logic [1:0] bm0, bm1; //lower path //upper path
 
-    bmu bmu0(
+    bmu #(.K(K)) bmu(
         .rx(rx),
         .curr_state(curr_state),
         .branch_weight0(bm0),
@@ -63,7 +63,7 @@ module acs(
                 branch_bit <= 1'b1;
             end else begin
                 updated_path <= path1[10:0];
-                branch_bit <= branch_bit;
+                branch_bit <= 1'b1;
              end
         end
         else begin
