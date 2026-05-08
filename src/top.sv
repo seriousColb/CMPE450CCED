@@ -3,50 +3,65 @@
 module top(
     input logic clk,        // system clock (e.g., 100 MHz)
     input logic reset,      // reset button/signal
-    input logic RxD,        // UART receive line
+    input logic RxD,
+    input logic RxD_2,        // UART receive line
     input logic btn,
     input logic en,
+    input logic en_2,
     output logic TxD,
+    output logic TxD_2,
     output logic [7:0] LED  // display received byte on LEDs
 );
 
+//en --> V17 (first switch)
+//reset--> 
+
 logic [7:0] rx_data; // internal wire to connect receiver output
+logic [7:0] rx_data_2; //second receiver
 logic data_valid; //high when byte is received
+logic data_valid_2; //second data valid
 logic [1023:0] msg; //input message
+logic [2047:0] enc_msg; //encoded message
+logic [1023:0] msg_2;
 logic [6:0] byte_index;
+logic [7:0] byte_count;
 
 logic start;
 logic done;
-
 logic busy_prev;
 logic start_prev;
 logic transmit_pulse;
-
-//transmitter dut1 (
-//    .clk(clk),
-//    .reset(reset),
-//    .transmit(transmit_pulse),
-//    .data(msg[byte_index*8 +: 8]),
-//    .TxD(TxD),
-//    .busy(busy)
-//);
+logic reset_en;
+logic reset_en_2;
 
 encode_and_send_FSM #(
     .DATA_BITS(1024),
     .K(3)
-) encode_and_send_FSM (
+) encode_and_send_FSM_1 (
     .clk(clk),
     .en(en),
     .raw_data(msg),
     .done(done),
-    .txd(TxD)
+    .txd(TxD),
+    .reset(reset_en)
 );
 
-//transmit V17 (first)
-//reset V16 (second)
+//stopped here. what to put into the EAS_FSM. 
+//can i send only 1024, will it be encoded first?
+send_FSM #(
+    .DATA_BITS(1024),
+    .K(3)
+) send_FSM (
+    .clk(clk),
+    .en(en_2),
+    .raw_data(msg_2),
+    .done(done),
+    .txd(TxD_2),
+    .reset(reset_en_2)
+);
 
 // instantiate the receiver module
-receiver dut2 (
+receiver rec1 (
     .clk(clk),
     .reset(reset),
     .RxD(RxD),
@@ -54,15 +69,16 @@ receiver dut2 (
     .data_valid(data_valid)
 );
 
-//debounce dut3 (
-//    .pb_1(btn),
-//    .clk(clk),
-//    .pb_out(start)
-//);
-
-//code to take in from a text file. a 1 or a 0. 
-always_ff @(posedge clk or posedge reset) begin
-    if(reset) begin
+receiver rec2 (
+    .clk(clk),
+    .reset(reset),
+    .RxD(RxD_2),
+    .RxData(rx_data_2),
+    .data_valid(data_valid_2)
+);
+//receive message and place in msg
+always_ff @(posedge clk or posedge reset_en) begin
+    if(reset_en) begin
         msg <= 0;
     end
     else if(data_valid) begin
@@ -73,37 +89,42 @@ always_ff @(posedge clk or posedge reset) begin
     end
 end
 
-assign LED[0] = byte_index[0];
-assign LED[1] = byte_index[1];
-assign LED[2] = byte_index[2];
-assign LED[3] = byte_index[3];
-assign LED[4] = byte_index[4];
-assign LED[5] = byte_index[5];
-assign LED[6] = byte_index[6];
+//receive encoded message and place in enc_msg
+always_ff @(posedge clk or posedge reset_en_2) begin
+    if(reset_en_2) begin
+        enc_msg <= 0;
+    end
+    else if(data_valid) begin
+        enc_msg <= {enc_msg[2039:0], rx_data_2};
+        byte_count <= byte_count + 1;
+    end
+    else if(byte_count == 256) begin
+        msg_2 <= enc_msg[1023:0];
+    end
+    else begin
+        enc_msg <= enc_msg;
+    end
+end
 
-//start at 127th byte and decrement to send all bytes
-//always_ff @(posedge clk or posedge reset) begin
-//    if (reset) begin
-//        byte_index <= 127;
-//        busy_prev <= 0;
-//    end
-//    else begin
-//        busy_prev <= busy;
+//use a different data_valid for second uart to tell difference
 
-//        // detect falling edge of busy (byte finished)
-//        if (busy_prev && !busy) begin
-//            if (byte_index == 0)
-//                byte_index <= 127;
-//            else
-//                byte_index <= byte_index - 1;
-//        end
-//    end
-//end
+assign LED[0] = enc_msg[0];
+assign LED[1] = enc_msg[1];
+assign LED[2] = enc_msg[2];
+assign LED[3] = enc_msg[3];
+assign LED[4] = enc_msg[4];
+assign LED[5] = enc_msg[5];
+assign LED[6] = enc_msg[6];
+assign LED[7] = enc_msg[7];
 
-//always_ff @(posedge clk) begin
-//    start_prev <= start;
-//    transmit_pulse <= start && !start_prev; // rising edge detect
-//end
+assign LED[8] = msg_2[8];
+assign LED[9] = msg_2[9];
+assign LED[10] = msg_2[10];
+assign LED[11] = msg_2[11];
+assign LED[12] = msg_2[12];
+assign LED[13] = msg_2[13];
+assign LED[14] = msg_2[14];
+assign LED[15] = msg_2[15];
 
 endmodule
 
