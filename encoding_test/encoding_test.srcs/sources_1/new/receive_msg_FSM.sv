@@ -22,7 +22,7 @@ module receive_msg_FSM #(parameter DATA_BITS=8)(
         .RxData(rx_data),
         .data_valid(data_valid)
     );
-    
+
     always_ff @(posedge clk) begin
         if(!en) begin
             msg <= 0;
@@ -38,10 +38,8 @@ module receive_msg_FSM #(parameter DATA_BITS=8)(
                         msg[num_bytes*8 +: 8] <= rx_data;
                         done <= 1;
                     end else begin
-                        if(data_valid) begin
-                            msg[num_bytes*8 +: 8] <= rx_data;
-                            num_bytes <= num_bytes + 1;
-                        end
+                        msg[num_bytes*8 +: 8] <= rx_data;
+                        num_bytes <= num_bytes + 1;
                     end 
                 end 
             end

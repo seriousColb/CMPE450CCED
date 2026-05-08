@@ -18,6 +18,7 @@ def receive_data():
             if ser.in_waiting > 0:
                 data = ser.readline() #.decode('utf-8').rstrip()
                 print(f"Received: {data}")
+                print(f"Received in Hex: {data.hex()}")
                 #print number of bytes received
                 print(f"Bytes received: {len(data)}")
                 break

@@ -85,24 +85,24 @@ module receive_msg_FSM_tb;
 
         en = 1;
         
-        #100000000;
+        #100;
 
         //---------------------------------------------
         // Send message: DA 4F 22 00
         //---------------------------------------------
 
         send_uart_byte(8'hDA);
-        #(BAUD_PERIOD);
+        #(BAUD_PERIOD * 2);
         send_uart_byte(8'h4F);
-        #(BAUD_PERIOD);
+        #(BAUD_PERIOD * 9);
         send_uart_byte(8'h22);
-        #(BAUD_PERIOD);
+        #(BAUD_PERIOD * 7);
         send_uart_byte(8'h70);
-        #(BAUD_PERIOD);
+        #(BAUD_PERIOD * 3);
 
         // Null terminator
         send_uart_byte(8'h00);
-        #(BAUD_PERIOD);
+        #(BAUD_PERIOD * 5);
 
         //---------------------------------------------
         // Wait for FSM completion

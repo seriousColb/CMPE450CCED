@@ -13,8 +13,10 @@ def transmit_data(message):
         print(f"Connected to {port_name} at {baud_rate} baud rate.")
    
         # Send the message over the serial port
-        ser.write(message)
-        print(f"Message sent: {message}")
+        for byte in message:
+            ser.write(byte.to_bytes(1, byteorder='big'))
+            print(f"Byte sent: {byte.to_bytes(1, byteorder='big')}")
+            time.sleep(.01) # Add a small delay between bytes to ensure proper transmission
 
     except serial.SerialException as e:
         print(f"Serial error: {e}")
@@ -46,3 +48,19 @@ if __name__ == "__main__":
 
     #wait for response from FPGA
     data = rx.receive_data()
+
+    bit_array = ''.join(format(byte, '08b') for byte in data)   
+    #print(f"Bit array: {bit_array}")
+    print(f"Bit array length: {len(bit_array)}")
+
+    num_errors = 10
+    corrupted_bit_array = rx.induce_errors(bit_array, num_errors)
+
+    print(f"Corrupted bit array: {corrupted_bit_array}")
+    
+    #convert the corrupted bit array back to bytes
+    corrupted_bytes = bytes(int(corrupted_bit_array[i:i+8], 2) for i in range(0, len(corrupted_bit_array), 8))
+    transmit_data(corrupted_bytes)
+
+    corrupted_loop_back = rx.receive_data()
+    print(f"Corrupted loop back: {corrupted_loop_back}")
