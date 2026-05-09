@@ -46,8 +46,6 @@ encode_and_send_FSM #(
     .reset(reset_en)
 );
 
-//stopped here. what to put into the EAS_FSM. 
-//can i send only 1024, will it be encoded first?
 send_FSM #(
     .DATA_BITS(1024),
     .K(3)
@@ -98,8 +96,12 @@ always_ff @(posedge clk or posedge reset_en_2) begin
         enc_msg <= {enc_msg[2039:0], rx_data_2};
         byte_count <= byte_count + 1;
     end
-    else if(byte_count == 256) begin
+    else if(byte_count == 128) begin
         msg_2 <= enc_msg[1023:0];
+        //msg_2 <= 1024'b1;
+        //the above commented out line works. meaning it transmitted 1023 0's and one 1
+        //i could not get the non commented out line to work
+        //maybe a receiver issue or a shifting issue, not sure
     end
     else begin
         enc_msg <= enc_msg;
