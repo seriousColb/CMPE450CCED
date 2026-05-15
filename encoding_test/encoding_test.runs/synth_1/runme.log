@@ -14,7 +14,7 @@ ECHO is off.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source top.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 486.527 ; gain = 180.883
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 485.875 ; gain = 179.332
 Command: read_checkpoint -auto_incremental -incremental C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/utils_1/imports/synth_1/shift_register.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/utils_1/imports/synth_1/shift_register.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -23,11 +23,13 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 39408
+INFO: [Synth 8-7075] Helper process launched with PID 10604
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1321.066 ; gain = 439.840
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1320.891 ; gain = 439.547
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/send.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'encode_and_send_FSM' [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/encode_and_send_FSM.sv:6]
@@ -43,24 +45,61 @@ INFO: [Synth 8-226] default block is never used [C:/Users/dinak/CMPE450/CMPE450C
 INFO: [Synth 8-6155] done synthesizing module 'buffered_transmitter' (0#1) [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/buffered_transmitter.sv:8]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/encode_and_send_FSM.sv:89]
 INFO: [Synth 8-6155] done synthesizing module 'encode_and_send_FSM' (0#1) [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/encode_and_send_FSM.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'decode_and_send_FSM' [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/decode_and_send_FSM.sv:6]
+	Parameter DATA_BITS bound to: 1024 - type: integer 
+	Parameter K bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'viterbiDecoder' [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/viterbiDecoder.sv:32]
+INFO: [Synth 8-6157] synthesizing module 'acs' [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/acs.sv:22]
+	Parameter K bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'bmu' [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/bmu.sv:23]
+	Parameter K bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'bmu' (0#1) [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/bmu.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'acs' (0#1) [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/acs.sv:22]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/viterbiDecoder.sv:161]
+INFO: [Synth 8-6157] synthesizing module 'SMU' [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/SMU.sv:31]
+	Parameter TB_DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/SMU.sv:99]
+INFO: [Synth 8-6155] done synthesizing module 'SMU' (0#1) [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/SMU.sv:31]
+WARNING: [Synth 8-689] width (7) of port connection 'index' does not match port width (1) of module 'SMU' [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/viterbiDecoder.sv:272]
+INFO: [Synth 8-6155] done synthesizing module 'viterbiDecoder' (0#1) [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/viterbiDecoder.sv:32]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/decode_and_send_FSM.sv:90]
+INFO: [Synth 8-6155] done synthesizing module 'decode_and_send_FSM' (0#1) [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/decode_and_send_FSM.sv:6]
 INFO: [Synth 8-6157] synthesizing module 'receiver' [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/uart_receiver.sv:3]
 INFO: [Synth 8-226] default block is never used [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/uart_receiver.sv:67]
 INFO: [Synth 8-6155] done synthesizing module 'receiver' (0#1) [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/uart_receiver.sv:3]
 INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/send.sv:3]
 WARNING: [Synth 8-6014] Unused sequential element tx_data_reg was removed.  [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/encode_and_send_FSM.sv:82]
+WARNING: [Synth 8-3936] Found unconnected internal register 'enc1_reg' and it is trimmed from '2' to '1' bits. [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/bmu.sv:39]
+WARNING: [Synth 8-3936] Found unconnected internal register 'enc0_reg' and it is trimmed from '2' to '1' bits. [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/bmu.sv:38]
+WARNING: [Synth 8-6014] Unused sequential element decision_reg was removed.  [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/SMU.sv:191]
+WARNING: [Synth 8-7137] Register survivor_mem_reg in module SMU has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'survivor_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "survivor_mem_reg" dissolved into registers
+WARNING: [Synth 8-6014] Unused sequential element tb_timer_reg was removed.  [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/viterbiDecoder.sv:142]
+WARNING: [Synth 8-6014] Unused sequential element tb_done_reg was removed.  [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/viterbiDecoder.sv:145]
+WARNING: [Synth 8-6014] Unused sequential element active_len_reg was removed.  [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/viterbiDecoder.sv:168]
+WARNING: [Synth 8-7137] Register rx0_reg in module viterbiDecoder has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/viterbiDecoder.sv:153]
+WARNING: [Synth 8-7137] Register best_state_reg in module viterbiDecoder has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/viterbiDecoder.sv:188]
+WARNING: [Synth 8-7137] Register decoded_bits_reg in module viterbiDecoder has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/viterbiDecoder.sv:211]
+WARNING: [Synth 8-6014] Unused sequential element tx_data_reg was removed.  [C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/sources_1/new/decode_and_send_FSM.sv:83]
+WARNING: [Synth 8-7129] Port index in module SMU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_start in module SMU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port en in module viterbiDecoder is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1435.215 ; gain = 553.988
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1447.109 ; gain = 565.766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1435.215 ; gain = 553.988
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1447.109 ; gain = 565.766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1435.215 ; gain = 553.988
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1447.109 ; gain = 565.766
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 1435.215 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.111 . Memory (MB): peak = 1447.109 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -71,40 +110,33 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1522.043 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1540.570 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 The system cannot find the path specified.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1522.043 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1540.570 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1522.043 ; gain = 640.816
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1540.570 ; gain = 659.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1522.043 ; gain = 640.816
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1540.570 ; gain = 659.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1522.043 ; gain = 640.816
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Preparing Guide Design
----------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-6895] The reference checkpoint C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.srcs/utils_1/imports/synth_1/shift_register.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
----------------------------------------------------------------------------------
-Finished Doing Graph Differ : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1522.043 ; gain = 640.816
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Preparing Guide Design : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1522.043 ; gain = 640.816
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1540.570 ; gain = 659.227
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'encode_FSM'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'encode_and_send_FSM'
+INFO: [Synth 8-802] inferred FSM for state register 'smu_state_reg' in module 'SMU'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -124,56 +156,78 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
            WAIT_TRANSMIT |                           100000 |                              010
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'encode_and_send_FSM'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               START_SMU |                               00 |                              000
+                SMU_IDLE |                               01 |                              001
+                   WRITE |                               10 |                              010
+               TRACEBACK |                               11 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'smu_state_reg' using encoding 'sequential' in module 'SMU'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1522.043 ; gain = 640.816
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1540.570 ; gain = 659.227
 ---------------------------------------------------------------------------------
-
-
-Incremental Synthesis Report Summary:
-
-1. Incremental synthesis run: no
-
-   Reason for not running incremental synthesis : 
-
-
-INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   17 Bit       Adders := 1     
-	   2 Input   11 Bit       Adders := 2     
-	   2 Input    9 Bit       Adders := 1     
-	   2 Input    4 Bit       Adders := 2     
-	   2 Input    2 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input   17 Bit       Adders := 2     
+	   2 Input   11 Bit       Adders := 11    
+	   2 Input    9 Bit       Adders := 2     
+	   2 Input    7 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 6     
+	   2 Input    2 Bit       Adders := 10    
 +---XORs : 
-	   2 Input      1 Bit         XORs := 2     
+	   2 Input      2 Bit         XORs := 16    
+	   2 Input      1 Bit         XORs := 14    
 +---Registers : 
-	             2048 Bit    Registers := 1     
-	             1024 Bit    Registers := 1     
-	               17 Bit    Registers := 1     
-	               11 Bit    Registers := 3     
-	               10 Bit    Registers := 2     
-	                9 Bit    Registers := 1     
-	                8 Bit    Registers := 1     
-	                4 Bit    Registers := 2     
-	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 16    
+	             2048 Bit    Registers := 2     
+	             1024 Bit    Registers := 2     
+	               17 Bit    Registers := 2     
+	               11 Bit    Registers := 13    
+	               10 Bit    Registers := 4     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 2     
+	                7 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 22    
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 42    
 +---Muxes : 
 	   3 Input 2048 Bit        Muxes := 1     
+	   2 Input 1024 Bit        Muxes := 4     
+	   4 Input 1024 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 1     
+	   7 Input   17 Bit        Muxes := 1     
 	   6 Input   17 Bit        Muxes := 1     
-	   4 Input   10 Bit        Muxes := 1     
-	   2 Input   10 Bit        Muxes := 2     
+	   2 Input   11 Bit        Muxes := 7     
+	   4 Input   10 Bit        Muxes := 2     
+	   2 Input   10 Bit        Muxes := 4     
+	   7 Input    9 Bit        Muxes := 1     
 	   6 Input    9 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 2     
+	   4 Input    7 Bit        Muxes := 1     
 	   6 Input    6 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 7     
-	   3 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 1     
+	   4 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 6     
+	   4 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 2     
+	   4 Input    2 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 8     
+	   2 Input    1 Bit        Muxes := 89    
+	   4 Input    1 Bit        Muxes := 26    
+	   7 Input    1 Bit        Muxes := 8     
 	   3 Input    1 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 27    
 	   6 Input    1 Bit        Muxes := 8     
-	   4 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -191,25 +245,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1523.824 ; gain = 642.598
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:39 ; elapsed = 00:01:42 . Memory (MB): peak = 1588.113 ; gain = 706.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:03 ; elapsed = 00:01:08 . Memory (MB): peak = 1532.578 ; gain = 651.352
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:44 ; elapsed = 00:01:46 . Memory (MB): peak = 1588.113 ; gain = 706.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:32 ; elapsed = 00:01:39 . Memory (MB): peak = 1719.594 ; gain = 838.367
+Finished Timing Optimization : Time (s): cpu = 00:01:45 ; elapsed = 00:01:47 . Memory (MB): peak = 1588.113 ; gain = 706.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:37 ; elapsed = 00:01:44 . Memory (MB): peak = 1737.699 ; gain = 856.473
+Finished Technology Mapping : Time (s): cpu = 00:01:51 ; elapsed = 00:01:53 . Memory (MB): peak = 1598.418 ; gain = 717.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -227,37 +281,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:40 ; elapsed = 00:01:47 . Memory (MB): peak = 1737.699 ; gain = 856.473
+Finished IO Insertion : Time (s): cpu = 00:01:55 ; elapsed = 00:01:57 . Memory (MB): peak = 1610.758 ; gain = 729.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:40 ; elapsed = 00:01:47 . Memory (MB): peak = 1737.699 ; gain = 856.473
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:55 ; elapsed = 00:01:57 . Memory (MB): peak = 1610.758 ; gain = 729.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:41 ; elapsed = 00:01:48 . Memory (MB): peak = 1737.699 ; gain = 856.473
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:56 ; elapsed = 00:01:58 . Memory (MB): peak = 1610.758 ; gain = 729.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:41 ; elapsed = 00:01:48 . Memory (MB): peak = 1737.699 ; gain = 856.473
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:56 ; elapsed = 00:01:58 . Memory (MB): peak = 1610.758 ; gain = 729.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:42 ; elapsed = 00:01:49 . Memory (MB): peak = 1737.699 ; gain = 856.473
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:57 ; elapsed = 00:01:59 . Memory (MB): peak = 1610.758 ; gain = 729.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:42 ; elapsed = 00:01:49 . Memory (MB): peak = 1737.699 ; gain = 856.473
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:57 ; elapsed = 00:01:59 . Memory (MB): peak = 1610.758 ; gain = 729.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -274,46 +328,47 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    27|
-|3     |LUT1   |    11|
-|4     |LUT2   |    65|
-|5     |LUT3   |    22|
-|6     |LUT4   |    37|
-|7     |LUT5   |  1113|
-|8     |LUT6   |  2028|
-|9     |MUXF7  |   408|
-|10    |MUXF8  |   204|
-|11    |FDCE   |  1024|
-|12    |FDRE   |  2209|
-|13    |FDSE   |    23|
-|14    |IBUF   |     4|
-|15    |OBUF   |     1|
+|2     |CARRY4 |    85|
+|3     |LUT1   |    23|
+|4     |LUT2   |   116|
+|5     |LUT3   |   128|
+|6     |LUT4   |   140|
+|7     |LUT5   |  2281|
+|8     |LUT6   |  3000|
+|9     |MUXF7  |   858|
+|10    |MUXF8  |   424|
+|11    |FDCE   |  3217|
+|12    |FDPE   |    33|
+|13    |FDRE   |  3403|
+|14    |FDSE   |    30|
+|15    |LDC    |     2|
+|16    |IBUF   |     5|
+|17    |OBUF   |     2|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:42 ; elapsed = 00:01:49 . Memory (MB): peak = 1737.699 ; gain = 856.473
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:57 ; elapsed = 00:01:59 . Memory (MB): peak = 1610.758 ; gain = 729.414
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 1 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:35 ; elapsed = 00:01:47 . Memory (MB): peak = 1737.699 ; gain = 769.645
-Synthesis Optimization Complete : Time (s): cpu = 00:01:42 ; elapsed = 00:01:49 . Memory (MB): peak = 1737.699 ; gain = 856.473
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:49 ; elapsed = 00:01:57 . Memory (MB): peak = 1610.758 ; gain = 635.953
+Synthesis Optimization Complete : Time (s): cpu = 00:01:57 ; elapsed = 00:01:59 . Memory (MB): peak = 1610.758 ; gain = 729.414
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1737.699 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 639 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 1623.824 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1369 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'top' is not ideal for floorplanning, since the cellview 'encode_FSM' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1737.699 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1627.512 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 2 instances were transformed.
+  LDC => LDCE: 2 instances
 
 The system cannot find the path specified.
-Synth Design complete | Checksum: b3431d1f
+Synth Design complete | Checksum: 64cf8119
 INFO: [Common 17-83] Releasing license: Synthesis
-36 Infos, 3 Warnings, 1 Critical Warnings and 0 Errors encountered.
+54 Infos, 18 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:46 ; elapsed = 00:01:54 . Memory (MB): peak = 1737.699 ; gain = 1247.234
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1737.699 ; gain = 0.000
+synth_design: Time (s): cpu = 00:02:01 ; elapsed = 00:02:05 . Memory (MB): peak = 1627.512 ; gain = 1137.660
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1627.512 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/dinak/CMPE450/CMPE450CCED/encoding_test/encoding_test.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri May  8 10:43:45 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu May 14 18:09:45 2026...

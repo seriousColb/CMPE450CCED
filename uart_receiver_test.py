@@ -3,21 +3,22 @@ import serial
 import time
 import random
 
-port_name = 'COM16' 
+source_port = 'COM16' #COM16 is the right com port. COM17 is left com port.
+sink_port = 'COM17'
 baud_rate = 9600
 
 #this function opens the port, receives the data, prints it and the closes the port. It also prints the number of bytes received.
-def receive_data():
+def receive_data(port_name):
     try:
         #Open the serial port
         ser = serial.Serial(port_name, baud_rate, timeout=1)
-        print(f"Connected to {port_name} at {baud_rate} baud rate. Waiting to receive data...")
+        print(f"\n------WAITING TO RECEIVE DATA FROM FPGA ON PORT: {port_name}------\n")
         
         #Continuously read data from the serial port
         while True:
             if ser.in_waiting > 0:
                 data = ser.readline() #.decode('utf-8').rstrip()
-                print(f"Received: {data}")
+                #print(f"Received: {data}")
                 print(f"Received in Hex: {data.hex()}")
                 #print number of bytes received
                 print(f"Bytes received: {len(data)}")
@@ -32,7 +33,7 @@ def receive_data():
     finally:
         if 'ser' in locals() and ser.is_open:
             ser.close()
-            print("Serial port closed.")
+            print(f"\n------CLOSED PORT: {port_name}------\n")
 
     return data
 
